@@ -16,6 +16,7 @@
                     </todos-list>
         <todo-footer v-show = "isTodos"
                     :remainings = "remaining"
+                    @clearCompleted = "clearArr"
         ></todo-footer>
     </article>
 </template>
@@ -68,6 +69,9 @@
                 this.todoList.forEach(function(ele){
                     ele.todoDone = arg;
                 })
+            },
+            clearArr: function(){
+                this.todoList = [];
             }
         },
         watch: {
